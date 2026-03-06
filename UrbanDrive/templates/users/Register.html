@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="{% static 'css/users/Register.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+        </div>
+    </header>
+
+    <main>
+        <div class="register">
+            <h1>Register</h1>
+            <div class="form">
+
+                <form method="post">
+                    <input type="text" name="un" placeholder="UserName">
+                    <input type="email" name="email" placeholder="Email id">
+                    <input type="password" name="pass" placeholder="Password">
+                    <input id="rbtn" type="submit" value="Register">
+                </form>
+                
+                <p>Already have an account||<a href="">Login</a></p>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>
