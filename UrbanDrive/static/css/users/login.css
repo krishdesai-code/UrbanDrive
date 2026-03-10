@@ -26,14 +26,14 @@ body{
     background-color: #FAFAFA;
 }
 
-.register{
+.login{
     height: auto;
     width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     margin: 2rem;
 }
 
@@ -62,17 +62,16 @@ form{
     flex-direction: column;
 }
 
-#rbtn{
+#lbtn{
     height: 30%;
     width: 50%;
     background-color: #282222;
     color: white;
 }
 
-#rbtn:hover{
+#lbtn:hover{
     background-color: #fc5900;:
 }
-
 /* Desktop Design */
 
 @media (min-width:1367px) {
@@ -83,11 +82,11 @@ form{
     .navbar img{
         width: 10%;
     }
-    .register h1{
+    .login h1{
         font-size: 3rem;
     }
-    .register{
-        gap: 4rem;
+    .login{
+        gap: 2rem;
     }
     .form{
         width: 500px;
@@ -100,7 +99,7 @@ form{
         height: 35px;
         width: 300px;
     }
-    #rbtn{
+    #lbtn{
         font-size: 15px;
         font-weight: 600;
     }

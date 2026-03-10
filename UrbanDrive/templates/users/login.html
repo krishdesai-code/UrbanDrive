@@ -4,25 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Page</title>
-    <link rel="stylesheet" href="{% static 'css/users/Register.css' %}">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'css/users/login.css' %}">
 </head>
 <body>
         {% include 'users/header.html' %}
     <main>
-        <div class="register">
-            <h1>Register</h1>
-            <div class="form">
+        <div class="login">
+            <h1>Login</h1>
+            <h2>Welcome,Back</h2>
 
+            {% if error %}
+               <p style="color: red;"> {{error}}</p>
+            {% endif %}
+            <div class="form">
                 <form method="post">
                     {% csrf_token %}
-                    <input type="text" name="un" placeholder="UserName" required>
                     <input type="email" name="email" placeholder="Email id" required>
                     <input type="password" name="pass" placeholder="Password" required>
-                    <input id="rbtn" type="submit" value="Register">
+                    <input id="lbtn" type="submit" value="Login">
                 </form>
                 
-                <p>Already have an account <a href="{% url 'login'  %}">Login</a></p>
+                <p>Don't have an account  <a href="{% url 'register'  %}">Register</a></p>
 
             </div>
         </div>
