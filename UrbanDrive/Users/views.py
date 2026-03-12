@@ -34,3 +34,10 @@ def login(request) :
             return render(request,'users/login.html',{'error' : error })
 
     return render(request,"users/login.html")
+
+def home(request):
+    return render(request,"users/home.html")
+
+def logout(request) :
+    request.session.flush()
+    return redirect("login")

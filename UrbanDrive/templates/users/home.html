@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/users/home.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+            <div class="menu-options">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Login/Register</li>
+                </ul>
+            </div>
+            </div>
+
+            
+
+        </div>
+    </header>
+
+
+    <main>
+        <div class="availCar">
+            <h2>Check available car</h2>
+            <div class="form">
+                <form method="post">
+                    {% csrf_token %}
+
+                    <select name="loc" id="loc">
+                        <option>Select Location</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                    </select>
+
+                    <div class="dt">
+                        <p>Select Date and Time</p>
+                        <select name="sd" id="sd">
+                            <option>Start Date</option>
+                        </select>
+
+                        <select name="st" id="st">
+                            <option>Start Time</option>
+                        </select>
+
+                        <select name="ed" id="ed">
+                            <option>End Date</option>
+                        </select>
+
+                        <select name="ed" id="et">
+                            <option>End Time</option>
+                        </select>
+                    </div>
+
+                    <input type="submit" value="Search" id="sbtn">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile Design */
+
+.navbar{
+    height: 30%;
+    width: auto;
+    border-bottom: 3px solid black;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.menu-options{
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    background: #282222;
+    color: #FAFAFA;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+.menu-options ul li{
+    list-style: none;
+    padding: 0.8rem;
+}
+
+.menu:hover .menu-options{
+    display: block;
+}
+
+/* main Section */
+
+body{
+    background-color: #FAFAFA;
+}
+
+.availCar{
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #D9D9D9;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.availCar h2{
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#loc{
+    width: 80%;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+    outline: none;
+    margin: 1rem;
+}
+
+.dt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    background-color: #FAFAFA;
+}
+
+.dt p{
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#sd{
+    width: 80%;
+    padding: 0.3rem;
+    outline: none;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+}
+
+#st{
+    width: 80%;
+    padding: 0.3rem;
+    outline: none;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+}
+#ed{
+    width: 80%;
+    padding: 0.3rem;
+    outline: none;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+}
+#et{
+    width: 80%;
+    padding: 0.3rem;
+    outline: none;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#sbtn{
+    width: 40%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+    outline: none;
+}
+
+#sbtn:hover{
+    background-color: #fb5900;
+    color: #FAFAFA;
+}
+
+
+@media (min-width:1367px){
+    .logo img{
+        width: 10%;
+    }
+    .menu img{
+        display: none;
+    }
+    .menu-options{
+        position: relative;
+        display: block;
+        top: 0;
+        right: 1rem;
+        background-color: #FAFAFA;
+        color: #282222;
+        border-bottom: 3px solid #282222;
+        border-top: 1px solid #282222;
+        border-left: 1px solid #fb5900;
+        border-right: 1px solid #fb5900;
+        padding: 0.3rem;
+        transition: transform 0.4s ease;
+    }
+    .menu-options:hover {
+        background-color: #282222;
+        color: #FAFAFA;
+        transform: rotateY(5deg) rotateX(5deg) translateZ(-20px);
+    }
+
+    .menu-options:hover{
+        background-color: #282222;
+        color: #FAFAFA;
+    }
+
+    .menu-options ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-options ul li{
+        margin-right: 1rem;
+        padding: 0.3rem;
+    }
+
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .availCar{
+        padding-left: 3rem;
+        padding-right: 3rem;
+        border-radius: 5px;
+        border-top: 3px solid #282222;
+        border-bottom: 3px solid #282222;
+        transition: transform 0.4s ease;
+    }
+    .availCar:hover{
+        background-color: #282222;
+        color: #FAFAFA;
+        transform: rotateY(5deg) rotateX(5deg) translateZ(-10px);
+        border-right: 3px solid #fb5900;
+        border-left: 3px solid #fb5900;
+    }
+    .availCar:hover p{
+        color: #282222;
+    }
+}
