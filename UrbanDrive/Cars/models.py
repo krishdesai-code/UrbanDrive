@@ -1,16 +1,18 @@
 from django.db import models
+from Users.models import Users
+
 
 class CarCategory(models.Model) :
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.id
+        return self.name
     
 
 class Car(models.Model) :
 
-    FULE_TYPE_CHOICE =[
+    FUEL_TYPE_CHOICES =[
         ('P','Petrol'),
         ('D','Diesel'),
         ('E','Ev')
@@ -26,15 +28,53 @@ class Car(models.Model) :
 
     year = models.PositiveIntegerField()
 
-    fule_type = models.CharField(max_length=1,choices=FULE_TYPE_CHOICE)
+    fuel_type = models.CharField(max_length=1,choices=FUEL_TYPE_CHOICES)
 
-    Average = models.IntegerField()
+    average = models.PositiveIntegerField()
 
     km = models.DecimalField(max_digits=7,decimal_places=2)
 
     rent = models.DecimalField(max_digits=10,decimal_places=2)
 
-    is_avail = models.BooleanField(default=False)
+    is_avail = models.BooleanField(default=True)
+
+    start_date = models.DateField()
+
+    start_time = models.TimeField()
+
+    end_date = models.DateField()
+
+    end_time = models.TimeField()
+
 
     def __str__(self):
-        return self.name
+        return f"{self.brand} {self.name}"
+
+class CarImages(models.Model):
+
+    car_id = models.ForeignKey(Car,on_delete=models.CASCADE,related_name='images')
+    img = models.ImageField(upload_to='car_images')
+
+    def __str__(self):
+        return f"Image for {self.car.name}"
+
+class CarRating(models.Model) :
+
+    RATING_CHOICES = [
+        (1,'1 Star'),
+        (2,'2 Star'),
+        (3,'3 Star'),
+        (4,'4 Star'),
+        (5,'5 Star')
+    ]
+
+    id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(Users,on_delete=models.CASCADE)
+    car_id = models.ForeignKey(Car,on_delete=models.CASCADE)
+
+    rating = models.IntegerField(choices=RATING_CHOICES)
+
+    comment = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.rating} - {self.car.name}"

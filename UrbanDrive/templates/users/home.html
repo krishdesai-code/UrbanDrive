@@ -20,17 +20,17 @@
             <div class="menu">
                 <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
 
-            <div class="menu-options">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Login/Register</li>
-                </ul>
-            </div>
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="{% url 'login'  %}">Login</a>
+                            <a href="{% url 'register'  %}">Register</a></li>
+                    </ul>
+                </div>
             </div>
 
-            
 
         </div>
     </header>
@@ -69,6 +69,57 @@
 
                     <input type="submit" value="Search" id="sbtn">
                 </form>
+            </div>
+        </div>
+
+        <div class="ac">
+            <div class="aboutus" id="about">
+                <h2>About Us – UrbanDrive</h2>
+                <div class="para">
+                    <p>
+                        Welcome to UrbanDrive, your trusted partner for seamless and convenient car rentals! At
+                        UrbanDrive,
+                        we believe that getting from point A to point B should be hassle-free, comfortable, and
+                        enjoyable.
+
+                        Whether you need a car for a weekend getaway, a business trip, or just to explore the city,
+                        UrbanDrive provides a wide range of vehicles to suit every need and budget — from compact cars
+                        to
+                        premium SUVs.
+
+                        Our mission is simple: make your journey as smooth as possible. With easy online booking,
+                        transparent pricing, and 24/7 customer support, you can focus on the road ahead while we take
+                        care
+                        of everything else.
+
+                        At UrbanDrive, safety, reliability, and customer satisfaction are at the heart of everything we
+                        do.
+                        Join thousands of happy travelers who trust us for their rides and experience the freedom of
+                        driving
+                        with confidence.
+                    </p>
+                </div>
+                <p id="slogan">Urban Drive : Where comfort meets control</p>
+            </div>
+
+            <div id="contact" class="contact">
+                <h2>Contact Us – UrbanDrive</h2>
+                <div class="details">
+                    <p>
+                        Have questions or need assistance? UrbanDrive is here to help! Whether it’s about booking a car,
+                        understanding our services, or giving feedback, our team is ready to assist you promptly and
+                        efficiently.
+
+                        You can reach us through any of the following channels:
+
+                    <ul>
+                        <li>Email:support@urbandrive.com</li>
+                        <li>Phone: +91 98765 43210</li>
+                        <li>Office Address:421,Yes Arian Complex near Swami vivekanand circle memnagar Ahmedabad Gujarat
+                        </li>
+                    </ul>
+                    </p>
+                </div>
             </div>
         </div>
     </main>
