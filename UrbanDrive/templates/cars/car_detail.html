@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title>
+    <link rel="stylesheet" href="{% static 'css/cars/car_detail.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="/users/home">Home</a></li>
+                        <li><a href="/users/home">About</a></li>
+                        <li><a href="/users/home">Contact</a></li>
+                        <li><a href="{% url 'login'  %}">Login|</a>
+                            <a href="{% url 'register'  %}">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <main>
+        <div class="acar">
+            <div class="car-section">
+                <h3>Toyota Fortuner 2025</h3>
+                <div class="car">
+                    <div class="img">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.QQ9PPBg_x10dfdOLwpSRBwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3"
+                            alt="carPhoto" width="50%">
+                    </div>
+
+                    <div class="detail">
+                        <div class="left">
+                            <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%">
+                                <p>Suv</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%">
+                                <p>Automatic</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%">
+                                <p>20,000</p>
+                            </div>
+                        </div>
+
+                        <div class="rigth">
+                            <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%">
+                                <p>Diesel</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%">
+                                <p>10kmpl</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%">
+                                <p>7000/Day</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="termsCondition">
+            <h2 id="area">Terms and Conditions</h2>
+            <div class="para">
+                <ol>
+                    <li>
+                        <strong>Eligibility</strong>
+                        <ul>
+                            <li>Driver must be 21+ with a valid Indian driving license.</li>
+                            <li>Valid government ID proof is required.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Booking & Payment</strong>
+                        <ul>
+                            <li>Advance payment may be required to confirm booking.</li>
+                            <li>Prices exclude fuel, tolls, and traffic fines.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Vehicle Usage</strong>
+                        <ul>
+                            <li>Vehicle must be used only by the registered driver.</li>
+                            <li>Illegal activities, racing, or drunk driving are strictly prohibited.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Security Deposit</strong>
+                        <ul>
+                            <li>A refundable deposit may be collected before vehicle delivery.</li>
+                            <li>Damage, fines, or late fees may be deducted from the deposit.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Return Policy</strong>
+                        <ul>
+                            <li>Vehicle must be returned on time and in the same condition.</li>
+                            <li>Late returns may incur additional charges.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Accidents</strong>
+                        <ul>
+                            <li>Any accident must be reported immediately.</li>
+                            <li>Insurance coverage is subject to policy terms.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Fuel Policy</strong>
+                        <ul>
+                            <li>Return the vehicle with the same fuel level provided.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Traffic Violations</strong>
+                        <ul>
+                            <li>All traffic fines during the rental period are the renter’s responsibility.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Liability</strong>
+                        <ul>
+                            <li>The company is not responsible for personal belongings left in the vehicle.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Jurisdiction</strong>
+                        <ul>
+                            <li>All disputes are subject to Ahmedabad, Gujarat jurisdiction.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button>Book Now</button>
+        </div>
+    </main>
+</body>
+
+</html>

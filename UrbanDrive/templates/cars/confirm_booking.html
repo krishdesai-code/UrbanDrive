@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Booking</title>
+    <link rel="stylesheet" href="{% static 'css/cars/confirm_booking.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="/users/home">Home</a></li>
+                        <li><a href="/users/home">About</a></li>
+                        <li><a href="/users/home">Contact</a></li>
+                        <li><a href="{% url 'login'  %}">Login|</a>
+                            <a href="{% url 'register'  %}">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <main>
+        <h1>Confirm Booking</h1>
+        <div class="book">
+            <div class="left">
+                <div class="cardetails">
+                    <h2>Car Details</h2>
+                    <h3>Toyota Fortuner 2025</h3>
+                    <div class="car">
+                        <div class="img">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.QQ9PPBg_x10dfdOLwpSRBwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3"
+                                alt="carPhoto" width="50%">
+                        </div>
+                        <div class="detail">
+
+                            <div class="leftside">
+                                <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%">
+                                    <p>Suv</p>
+                                </div>
+                                <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%">
+                                    <p>Automatic</p>
+                                </div>
+                                <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%">
+                                    <p>20,000</p>
+                                </div>
+                            </div>
+
+                            <div class="rigthside">
+                                <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%">
+                                    <p>Diesel</p>
+                                </div>
+                                <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%">
+                                    <p>10kmpl</p>
+                                </div>
+                                <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%">
+                                    <p>7000/Day</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="termsandCon">
+                <h2>Terms and Conditions</h2>
+
+                <div class="para">
+                    <ul>
+                        <li><strong>Daily Kilometer Limit:</strong> Maximum 150 km per day allowed. Extra distance will
+                            be charged per km.</li>
+
+                        <li><strong>Tyre Responsibility:</strong> Tyre puncture during the trip is the renter’s
+                            responsibility. Tyre burst due to normal wear or defect will be handled by the company.</li>
+
+                        <li><strong>Vehicle Care:</strong> The renter must drive responsibly. Any damage caused by
+                            negligence or rough driving will be chargeable.</li>
+
+                        <li><strong>Vehicle Cleanliness:</strong> The vehicle should be returned in reasonable
+                            cleanliness. Excessive dirt or stains may incur cleaning charges.</li>
+
+                        <li><strong>Geographical Limit:</strong> The vehicle must not be taken outside the permitted
+                            area without prior approval.</li>
+
+                        <li><strong>Breakdown Reporting:</strong> Any mechanical issue or warning light must be reported
+                            immediately to the company.</li>
+
+                        <li><strong>No Sub-Rental:</strong> The renter is not allowed to hand over or rent the vehicle
+                            to another person.</li>
+
+                        <li><strong>Parking Responsibility:</strong> The renter is responsible for safe and legal
+                            parking during the rental period.</li>
+
+                        <li><strong>Modification Prohibited:</strong> No modification, sticker, or alteration to the
+                            vehicle is allowed.</li>
+
+                        <li><strong>Vehicle Inspection:</strong> The vehicle condition will be checked before and after
+                            the rental period.</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <div class="rigth">
+                <div class="payment">
+                    <h2>Payment Section</h2>
+                </div>
+                <div class="carRent">
+                    <div class="crd">
+                        <p>Car :</p>
+                        <p>Toyota Fortuner</p>
+                    </div>
+                    <div class="crd">
+                        <p>Rent :</p>
+                        <p>7000rs</p>
+                    </div>
+                    <div class="crd">
+                        <p>Pickup :</p>
+                        <p>7 feb 04:00PM</p>
+                    </div>
+                    <div class="crd">
+                        <p>Drop-off :</p>
+                        <p>8 feb 04:00PM</p>
+                    </div>
+                </div>
+                <div class="note">
+                    <p id="n">Note : </p>
+                    <p>
+                        Currently, we are not accepting online
+                        payments for booking a car. You have
+                        to pay in cash at the time of pickup.
+
+                    </p>
+                    <div class="upper">
+
+                    </div>
+                    <div class="lower">
+                        <p id="p">Pickup Location :</p>
+                        <p>421, Yes Arian Complex, Near Swami
+                            Vivekanand Circle, Memnagar, Ahmedabad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn">
+            <img src="{% static 'img/Back.png' %}" width="5%">
+            <button>Book</button>
+        </div>
+    </main>
+</body>
+
+</html>

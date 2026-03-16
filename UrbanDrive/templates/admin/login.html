@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{% static 'css/admin/login.css' %}">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+        </div>
+    </header>
+
+      <main>
+        <div class="login">
+            <h1>Admin Login</h1>
+            {% if error %}
+               <p style="color: red;"> {{error}}</p>
+            {% endif %}
+            <div class="form">
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="email" name="email" placeholder="Email id" required>
+                    <input type="password" name="pass" placeholder="Password" required>
+                    <input id="lbtn" type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

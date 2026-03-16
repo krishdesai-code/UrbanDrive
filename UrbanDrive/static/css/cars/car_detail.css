@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar{
+    height: 30%;
+    width: auto;
+    border-bottom: 3px solid black;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.menu-options{
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    background: #282222;
+    color: #FAFAFA;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+.menu-options ul li{
+    list-style: none;
+    padding: 0.8rem;
+}
+.menu-options ul li a{
+    color: inherit;
+    text-decoration: none;
+}
+.menu:hover .menu-options{
+    display: block;
+}
+
+/* main */
+
+.acar{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.car-section{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}
+.car-section h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    margin: 0.6rem;
+    text-align: center;
+}
+.car{
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.img img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    gap: 1rem;
+    margin: 0.5rem;
+}
+
+.detail img{
+    width: 15%;
+}
+.detail p{
+    display: inline;
+    margin: 0.3rem;
+}
+
+.left{
+    margin: 2rem auto;
+}
+
+.rigth{
+    margin: 2rem auto;
+}
+
+
+
+.termsCondition{
+    padding:1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+
+}
+
+.termsCondition h2{
+    margin: 0.5rem;
+    text-align: center;
+}
+.para{
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.para ol li ul{
+    padding: 1rem;
+}
+
+
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn button{
+    height: auto;
+    width: 50%;
+    padding: 1rem;
+    background-color: green;
+    color: #FAFAFA;
+    border: none;
+    font-weight: 700;
+    border-radius: 0.4rem;
+}
+
+@media (min-width:1367px){
+    .navbar{
+        height: 100px;
+    }
+    .logo{
+        width: 50%;
+    }
+    .logo img{
+        width: 20%;
+    }
+    .menu img{
+        display: none;
+    }
+    .menu-options{
+        position: relative;
+        display: block;
+        top: 0;
+        right: 1rem;
+        background-color: #FAFAFA;
+        color: #282222;
+        border-bottom: 3px solid #282222;
+        border-top: 1px solid #282222;
+        border-left: 1px solid #fb5900;
+        border-right: 1px solid #fb5900;
+        padding: 0.3rem;
+        transition: transform 0.4s ease;
+    }
+
+    .menu-options ul li a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .menu-options:hover {
+        background-color: #282222;
+        color: #FAFAFA;
+        transform: rotateY(5deg) rotateX(5deg) translateZ(-20px);
+    }
+
+    .menu-options:hover{
+        background-color: #282222;
+        color: #FAFAFA;
+    }
+
+    .menu-options ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-options ul li{
+        margin-right: 1rem;
+        padding: 0.3rem;
+    }
+
+    .acar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .car-section{
+        padding: 1rem;
+        margin: 1rem;
+    }
+    .car{
+        gap: 20px;
+        flex-direction: row;
+    }
+    .img img{
+        width: 400px;
+        margin: 1rem auto;
+    }
+    .detail{
+        width: 50%;
+        max-width: 500px;
+        background-color: #FAFAFA;
+    }
+    .cd{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 5px;
+    }
+    .cd p{
+        margin: 5px;
+    }
+    .cd img{
+        width: 20%;
+    }
+    .car-section h3{
+        text-align: center;
+        font-size: 2rem;
+        margin: 2rem auto;
+    }
+    .termsCondition{
+        width: 80%;
+        margin: 2rem auto;
+    }
+    .termsCondition h2{
+        text-align: left;
+    }
+    .para{
+        display: block;
+    }
+    .btn button{
+        width: 200px;
+    }
+    
+}

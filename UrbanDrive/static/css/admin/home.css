@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile Design */
+
+.navbar{
+    height: 30%;
+    width: auto;
+    border-bottom: 3px solid black;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.menu-options{
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    background: #282222;
+    color: #FAFAFA;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+.menu-options ul li{
+    list-style: none;
+    padding: 0.8rem;
+}
+.menu-options ul li a{
+    color: inherit;
+    text-decoration: none;
+}
+.menu:hover .menu-options{
+    display: block;
+}
+
+/* main Section */
+
+.details{
+    background-color: #282222;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.cars,
+.booked,
+.user{
+    background-color: #FAFAFA;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.upper{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem;
+}
+.cars:hover,
+.booked:hover,
+.user:hover{
+    transform: scale(1.05);
+}
+
+@media (min-width:1367px){
+    .navbar{
+        height: 100px;
+    }
+    .logo{
+        width: 50%;
+    }
+    .logo img{
+        width: 20%;
+    }
+    .menu img{
+        display: none;
+    }
+    .menu-options{
+        position: relative;
+        display: block;
+        top: 0;
+        right: 1rem;
+        background-color: #FAFAFA;
+        color: #282222;
+        border-bottom: 3px solid #282222;
+        border-top: 1px solid #282222;
+        border-left: 1px solid #fb5900;
+        border-right: 1px solid #fb5900;
+        padding: 0.3rem;
+        transition: transform 0.4s ease;
+    }
+
+    .menu-options ul li a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .menu-options:hover {
+        background-color: #282222;
+        color: #FAFAFA;
+        transform: rotateY(5deg) rotateX(5deg) translateZ(-20px);
+    }
+
+    .menu-options:hover{
+        background-color: #282222;
+        color: #FAFAFA;
+    }
+
+    .menu-options ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-options ul li{
+        margin-right: 1rem;
+        padding: 0.3rem;
+    }
+
+    .details{
+        height: auto;
+        width: 600px;
+        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+        gap: 1rem;
+    }
+
+    .user,
+    .booked,
+    .cars{
+        margin: 0;
+    }
+    .user{   
+        grid-column: span 1;
+    }
+    .upper img{
+        width: 15%;
+    }
+}

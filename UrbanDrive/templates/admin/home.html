@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/admin/home.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="30%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="{% url 'admin_home'  %}">Home</a></li>
+                        <li><a href="">Cars</a></li>
+                        <li><a href="">Booked Cars</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="details">
+            <div class="cars">
+                <div class="upper">
+                    <img src="{% static 'img/add.png' %}" alt="addBtn" width="10%">
+                    <h2>Add New Car</h2>
+                </div>
+                <p>
+                    Admin can add cars so user can book it. 
+                </p>
+            </div>
+            <div class="booked">
+                <div class="upper">
+                    <img src="{% static 'img/Booked car.png' %}" alt="bookedIcon" width="10%">
+                    <h2>Booked Cars</h2>
+                </div>
+                <p>Admin can see booked car details.</p>
+            </div>
+            <div class="user">
+                <div class="upper">
+                    <img src="{% static 'img/user.png' %}" alt="userIcon" width="10%">
+                    <h2>User Details</h2>
+                </div>
+                <p>Admin can see user information for future help.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

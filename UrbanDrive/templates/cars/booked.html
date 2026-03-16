@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booked</title>
+    <link rel="stylesheet" href="{% static 'css/cars/booked.css' %}">
+</head>
+<body>
+        <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="/users/home">Home</a></li>
+                        <li><a href="/users/home">About</a></li>
+                        <li><a href="/users/home">Contact</a></li>
+                        <li><a href="{% url 'login'  %}">Login|</a>
+                            <a href="{% url 'register'  %}">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        </header>
+
+        <main>
+            <div class="success">
+                <div class="booked">
+                    <img src="{% static 'img/success.png' %}" alt="success icon" width="50%">
+                    <h2>Booking Confirmed You're all set to go!</h2>
+                </div>
+
+                <div class="urban">
+                    <p>📍 Urban Drive : Where comfort meets control</p>
+                    <button><img src="{% static 'img/Home btn.png' %}" alt="homebtn" width="10%"></button>
+                </div>
+            </div>
+            
+        </main>
+</body>
+</html>

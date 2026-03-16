@@ -282,16 +282,6 @@ form{
         border-bottom: 3px solid #282222;
         
     }
-    .availCar:hover{
-        background-color: #282222;
-        color: #FAFAFA;
-        border-right: 1px solid #fb5900;
-        border-left: 1px solid #fb5900;
-    }
-    .availCar:hover p{
-        color: #282222;
-    }
-
     .ac{
         display: flex;
     }

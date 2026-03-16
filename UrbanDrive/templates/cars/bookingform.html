@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Process</title>
+    <link rel="stylesheet" href="{% static 'css/cars/bookingform.css' %}">
+</head>
+<body>
+        <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="/users/home">Home</a></li>
+                        <li><a href="/users/home">About</a></li>
+                        <li><a href="/users/home">Contact</a></li>
+                        <li><a href="{% url 'login'  %}">Login|</a>
+                            <a href="{% url 'register'  %}">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        </header>
+
+        <main>
+            <div class="form">
+                {% csrf_token %}
+                <h2>Fill the Details</h2>
+                <form method="post">
+                    <div class="upper">
+                        <div class="aadhar">
+                            <h3>Aadhar Details</h3>
+                            <input type="text" name="aadhar" placeholder="XXXX XXXX XXXX">
+                            <input type="date" name="dob" placeholder="Date of Birth">
+                        </div>
+                        <div class="licence">
+                            <h3>Licence Details</h3>
+                            <input type="text" name="licence" placeholder="EX. GJ01 20230012345">
+                            <input type="date" name="valid" placeholder="Valid till">
+                        </div>
+                    </div>
+                    <div class="lower">
+
+                        <div class="mn">
+                            <h3>Mobile Number</h3>
+                            <input type="text" name="mn" placeholder="9995584710">
+                        </div>
+
+                        <div class="btn">
+                            <img src="{% static 'img/Back.png' %}" alt="backBtn" width="10%">
+                            <input type="submit" value="Save">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+</body>
+</html>
