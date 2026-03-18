@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Car</title>
+    <link rel="stylesheet" href="{% static 'css/admin/add_car.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="30%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="{% url 'admin_home'  %}">Home</a></li>
+                        <li><a href="{% url 'allcar'  %}">Cars</a></li>
+                        <li><a href="">Booked Cars</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="carAdd">
+            <h1>Add New Car</h1>
+            <div class="form">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" name="brand" placeholder="Vehicle Brand" required>
+                    <input type="text" name="name" placeholder="Vehicle Name" required>
+
+                    <input type="file" name="images" multiple>
+                    
+                    <select name="category" required>
+                        <option>---Select Type---</option>
+                        {% for c in categories %}
+                        <option value="{{c.id}}">{{c.name}}</option>
+                        {% endfor %}
+                        <option><a href="#">Add New</a></option>
+                    </select>
+
+                    <input type="number" name="year" min="2000" max="2026" step="1" required placeholder="Vehicle Year">
+
+                    <select name="fuel" required>
+                        <option value="">--Select Fuel Type--</option>
+                        <option value="P">Petrol</option>
+                        <option value="D">Diesel</option>
+                        <option value="C">CNG</option>
+                        <option value="E">EV</option>
+                    </select>
+
+                    <select name="gear" required>
+                        <option value="">--Select Fuel Type--</option>
+                        <option value="A">Automatic</option>
+                        <option value="M">Manual</option>
+                        <option value="I">IMT</option>
+                    </select>
+
+                    <input type="number" name="average" min="1" max="40" step="1" required placeholder="vehicle average">
+                    <input type="number" name="seat" min="2" max="15" step="1" required placeholder="vehicle seat">
+                    <input type="number" name="rent" min="0" step="0.01" required placeholder="Vehicle rent (Per Day)">
+                    <label for="">Currently Car is Available ?
+                        <select name="avail">
+                            <option value="True">Yes</option>
+                            <option value="False">No</option>
+                        </select>
+                    </label>
+
+                    <h3>Available Dates And Time</h3>
+                    <div class="avail">
+                        <div class="upper">
+                            <input type="date" name="sd" placeholder="start Date">
+                            <input type="time" name="st" placeholder="start Time">
+                        </div>
+
+                       <div class="lower">
+                            <input type="date" name="ed" placeholder="End Date">
+                            <input type="time" name="et" placeholder="End Time">
+                       </div>
+
+                    </div>
+
+                    <input type="submit" value="Add">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

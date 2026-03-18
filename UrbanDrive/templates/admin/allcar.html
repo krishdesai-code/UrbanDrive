@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Cars</title>
+    <link rel="stylesheet" href="{% static 'css/admin/allcar.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="{% url 'admin_home'  %}">Home</a></li>
+                        <li><a href="{% url 'allcar'  %}">Cars</a></li>
+                        <li><a href="">Booked Cars</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+    <main>
+        <h2>Listed Cars</h2>
+        <div class="acar">
+            {% for c in cars %}
+            <div class="car-section">
+                <h3>{{c.brand}} {{c.name}} {{c.year}}</h3>
+                <div class="car">
+                    <div class="img">
+                        {% if c.images.first %}
+                        <img class="car-img" src="{{ c.images.first.img.url }}" height="50%" width="50%"
+                            alt="{{ c.name }}">
+                        {% else %}
+                        <p>No images available for this car</p>
+                        {% endif %}
+                    </div>
+                    <div class="detail">
+
+                        <div class="left">
+                            <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%">
+                                <p>{{c.category}}</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%">
+                                <p>{{c.get_gear_type_display}}</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%">
+                                <p>{{c.Seat}}</p>
+                            </div>
+                        </div>
+
+                        <div class="rigth">
+                            <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%">
+                                <p>{{c.get_fuel_type_display}}</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%">
+                                <p>{{c.average}}</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%">
+                                <p>{{c.rent}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="upDel">
+                        <a href="{% url 'update' c.id  %}" style="color: green;">Update</a>
+                        <a href="{% url 'delete' c.id  %}" onclick="return confirm('Are you sure want to delete this car?')" style="color: red;">Delete</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </main>
+</body>
+
+</html>

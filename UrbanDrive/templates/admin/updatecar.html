@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update CarDetails</title>
+    <link rel="stylesheet" href="{% static 'css/admin/updatecar.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="30%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="{% url 'admin_home'  %}">Home</a></li>
+                        <li><a href="{% url 'allcar'  %}">Cars</a></li>
+                        <li><a href="">Booked Cars</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<main>
+    <div class="carAdd">
+        <h1>Update Car Details</h1>
+
+        <div class="form">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <input type="text" name="brand" value="{{ car.brand }}" placeholder="Vehicle Brand" required>
+                <input type="text" name="name" value="{{ car.name }}" placeholder="Vehicle Name" required>   
+                <label>Add New Images:</label>
+                <input type="file" name="images" multiple>
+
+             
+                <select name="category" required>
+                    <option>---Select Type---</option>
+                    {% for c in categories %}
+                        <option value="{{ c.id }}" {% if car.category_id == c.id %}selected{% endif %}>
+                            {{ c.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+            
+                <input type="number" name="year" value="{{ car.year }}" min="2000" max="2026" required placeholder="Vehicle Year">
+                
+                <select name="fuel" required>
+                    <option value="">--Select Fuel Type--</option>
+                    <option value="P" {% if car.fuel_type == "P" %}selected{% endif %}>Petrol</option>
+                    <option value="D" {% if car.fuel_type == "D" %}selected{% endif %}>Diesel</option>
+                    <option value="C" {% if car.fuel_type == "C" %}selected{% endif %}>CNG</option>
+                    <option value="E" {% if car.fuel_type == "E" %}selected{% endif %}>EV</option>
+                </select>
+
+
+                <select name="gear" required>
+                    <option value="">--Select Gear Type--</option>
+                    <option value="A" {% if car.gear_type == "A" %}selected{% endif %}>Automatic</option>
+                    <option value="M" {% if car.gear_type == "M" %}selected{% endif %}>Manual</option>
+                    <option value="I" {% if car.gear_type == "I" %}selected{% endif %}>IMT</option>
+                </select>
+
+             
+                <input type="number" name="average" value="{{ car.average }}" required placeholder="Vehicle Average">
+                <input type="number" name="seat" value="{{ car.Seat }}" required placeholder="Vehicle Seat">
+                <input type="number" name="rent" value="{{ car.rent }}" required placeholder="Vehicle Rent">
+
+              
+                <label>Currently Available?</label>
+                <select name="avail">
+                    <option value="True" {% if car.is_avail %}selected{% endif %}>Yes</option>
+                    <option value="False" {% if not car.is_avail %}selected{% endif %}>No</option>
+                </select>
+
+            
+                <h3>Available Dates And Time</h3>
+
+                <div class="avail">
+                    <div class="upper">
+                        <input type="date" name="sd" value="{{ car.start_date|date:'Y-m-d' }}">
+                        <input type="time" name="st" value="{{ car.start_time|time:'H:i' }}">
+                    </div>
+
+                    <div class="lower">
+                        <input type="date" name="ed" value="{{ car.end_date|date:'Y-m-d' }}">
+                        <input type="time" name="et" value="{{ car.end_time|time:'H:i' }}">
+                    </div>
+                </div>
+
+                <input type="submit" value="Update Car">
+
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+
+</html>

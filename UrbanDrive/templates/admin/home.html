@@ -21,7 +21,7 @@
                 <div class="menu-options">
                     <ul>
                         <li><a href="{% url 'admin_home'  %}">Home</a></li>
-                        <li><a href="">Cars</a></li>
+                        <li><a href="{% url 'allcar'  %}">Cars</a></li>
                         <li><a href="">Booked Cars</a></li>
                         <li><a href="">Account</a></li>
                     </ul>
@@ -35,7 +35,7 @@
             <div class="cars">
                 <div class="upper">
                     <img src="{% static 'img/add.png' %}" alt="addBtn" width="10%">
-                    <h2>Add New Car</h2>
+                    <h2><a href="{% url 'add_car'  %}">Add New Car</a></h2>
                 </div>
                 <p>
                     Admin can add cars so user can book it. 

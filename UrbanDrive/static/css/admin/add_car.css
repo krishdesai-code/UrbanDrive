@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile Design */
+
+.navbar{
+    height: 30%;
+    width: auto;
+    border-bottom: 3px solid black;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.menu-options{
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    background: #282222;
+    color: #FAFAFA;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+.menu-options ul li{
+    list-style: none;
+    padding: 0.8rem;
+}
+.menu-options ul li a{
+    color: inherit;
+    text-decoration: none;
+}
+.menu:hover .menu-options{
+    display: block;
+}
+
+.carAdd{
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.carAdd h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form input{
+    padding: 0.6rem;
+    width: 90%;
+    border-radius: 0.5rem;
+}
+
+form select{
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+}
+
+.avail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+}
+
+.form h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form{
+    background-color: #282222;
+    color: #FAFAFA;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.upper,
+.lower{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+@media (min-width:1367px){
+    .navbar{
+        height: 100px;
+    }
+    .logo{
+        width: 50%;
+    }
+    .logo img{
+        width: 20%;
+    }
+    .menu img{
+        display: none;
+    }
+    .menu-options{
+        position: relative;
+        display: block;
+        top: 0;
+        right: 1rem;
+        background-color: #FAFAFA;
+        color: #282222;
+        border-bottom: 3px solid #282222;
+        border-top: 1px solid #282222;
+        border-left: 1px solid #fb5900;
+        border-right: 1px solid #fb5900;
+        padding: 0.3rem;
+        transition: transform 0.4s ease;
+    }
+
+    .menu-options ul li a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .menu-options:hover {
+        background-color: #282222;
+        color: #FAFAFA;
+        transform: rotateY(5deg) rotateX(5deg) translateZ(-20px);
+    }
+
+    .menu-options:hover{
+        background-color: #282222;
+        color: #FAFAFA;
+    }
+
+    .menu-options ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-options ul li{
+        margin-right: 1rem;
+        padding: 0.3rem;
+    }
+
+    .form{
+        width: 600px;
+        background-color: #282222;
+        color: #FAFAFA;
+        padding: 2rem;
+        border-radius: 0.5rem;
+    }
+
+    .form input{
+        width: 280px;
+    }
+    .avail{
+        flex-direction: row;
+        border: none;
+    }
+    .upper,
+    .lower{
+        gap: 20px;
+    }
+
+
+}

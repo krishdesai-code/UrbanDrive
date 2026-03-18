@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
+from django.http import HttpResponse
 from django.contrib.auth.hashers import make_password,check_password
 from .models import Users
+from Cars.models import Car
+from datetime import datetime
 
 def Register(request) :
     if request.method == "POST" :
@@ -36,6 +39,22 @@ def login(request) :
     return render(request,"users/login.html")
 
 def home(request):
+    if request.method == 'POST':
+        sd = request.POST.get('sd')  
+        ed = request.POST.get('ed')  
+
+        print("Start:", sd, "End:", ed)
+      
+        sd = datetime.strptime(sd, '%Y-%m-%d').date()
+        ed = datetime.strptime(ed, '%Y-%m-%d').date()
+
+        available_cars = Car.objects.exclude(
+            start_date__lte=ed,  
+            end_date__gte=sd     
+        )
+
+        return render(request,'cars/cars.html',{'available' : available_cars})
+
     return render(request,"users/home.html")
 
 def logout(request) :

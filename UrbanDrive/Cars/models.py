@@ -15,7 +15,14 @@ class Car(models.Model) :
     FUEL_TYPE_CHOICES =[
         ('P','Petrol'),
         ('D','Diesel'),
+        ('C','CNG'),
         ('E','Ev')
+    ]
+
+    GEAR_TYPE = [
+        ('A','Automatic'),
+        ('M','Manual'),
+        ('I','IMT'),
     ]
 
     id = models.AutoField(primary_key=True)
@@ -30,9 +37,11 @@ class Car(models.Model) :
 
     fuel_type = models.CharField(max_length=1,choices=FUEL_TYPE_CHOICES)
 
+    gear_type = models.CharField(max_length=1,choices=GEAR_TYPE)
+
     average = models.PositiveIntegerField()
 
-    km = models.DecimalField(max_digits=7,decimal_places=2)
+    Seat = models.PositiveIntegerField()
 
     rent = models.DecimalField(max_digits=10,decimal_places=2)
 

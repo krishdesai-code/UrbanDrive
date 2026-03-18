@@ -1,12 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Available Cars</title>
     <link rel="stylesheet" href="{% static 'css/cars/cars.css' %}">
 </head>
+
 <body>
     <header>
         <div class="navbar">
@@ -24,7 +26,8 @@
                         <li><a href="/users/home">About</a></li>
                         <li><a href="/users/home">Contact</a></li>
                         <li><a href="{% url 'login'  %}">Login|</a>
-                            <a href="{% url 'register'  %}">Register</a></li>
+                            <a href="{% url 'register'  %}">Register</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -35,144 +38,48 @@
     <main>
         <h2>Available Cars</h2>
         <div class="acar">
+            {% for c in available_cars %}
             <div class="car-section">
-                <h3>Toyota Fortuner 2025</h3>
+                <h3>{{c.brand}} {{c.name}} {{c.year}}</h3>
                 <div class="car">
                     <div class="img">
-                        <img src="https://tse3.mm.bing.net/th/id/OIP.QQ9PPBg_x10dfdOLwpSRBwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3" alt="carPhoto" width="50%">
+                        {% for img in car.images.all %}
+                        <img src="{{ img.image.url }}" alt="{{ car.name }}" style="width:50%; height:auto;">
+                        {% empty %}
+                        <p>No images available</p>
+                        {% endfor %}
                     </div>
                     <div class="detail">
 
-                       <div class="left">
-                        <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%"><p>Suv</p></div>
-                        <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%"><p>Automatic</p></div>
-                        <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%"><p>20,000</p></div>
-                       </div>
+                        <div class="left">
+                            <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%">
+                                <p>{{c.category}}</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%">
+                                <p>{{c.gear_type}}</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%">
+                                <p>{{c.Seat}}</p>
+                            </div>
+                        </div>
 
-                       <div class="rigth">
-                        <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%"><p>Diesel</p></div>
-                        <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%"><p>10kmpl</p></div>
-                        <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%"><p>7000/Day</p></div>
-                       </div>
+                        <div class="rigth">
+                            <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%">
+                                <p>{{c.fuel_type}}</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%">
+                                <p>{{c.average}}</p>
+                            </div>
+                            <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%">
+                                <p>{{c.rent}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="car-section">
-                <h3>Toyota Fortuner 2025</h3>
-                <div class="car">
-                    <div class="img">
-                        <img src="https://tse3.mm.bing.net/th/id/OIP.QQ9PPBg_x10dfdOLwpSRBwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3" alt="carPhoto" width="50%">
-                    </div>
-                    <div class="detail">
-
-                       <div class="left">
-                        <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%"><p>Suv</p></div>
-                        <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%"><p>Automatic</p></div>
-                        <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%"><p>20,000</p></div>
-                       </div>
-
-                       <div class="rigth">
-                        <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%"><p>Diesel</p></div>
-                        <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%"><p>10kmpl</p></div>
-                        <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%"><p>7000/Day</p></div>
-                       </div>
-                    </div>
-                </div>
-            </div>
-
-                        <div class="car-section">
-                <h3>Toyota Fortuner 2025</h3>
-                <div class="car">
-                    <div class="img">
-                        <img src="https://tse3.mm.bing.net/th/id/OIP.QQ9PPBg_x10dfdOLwpSRBwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3" alt="carPhoto" width="50%">
-                    </div>
-                    <div class="detail">
-
-                       <div class="left">
-                        <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%"><p>Suv</p></div>
-                        <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%"><p>Automatic</p></div>
-                        <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%"><p>20,000</p></div>
-                       </div>
-
-                       <div class="rigth">
-                        <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%"><p>Diesel</p></div>
-                        <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%"><p>10kmpl</p></div>
-                        <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%"><p>7000/Day</p></div>
-                       </div>
-                    </div>
-                </div>
-            </div>
-
-                        <div class="car-section">
-                <h3>Toyota Fortuner 2025</h3>
-                <div class="car">
-                    <div class="img">
-                        <img src="https://tse3.mm.bing.net/th/id/OIP.QQ9PPBg_x10dfdOLwpSRBwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3" alt="carPhoto" width="50%">
-                    </div>
-                    <div class="detail">
-
-                       <div class="left">
-                        <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%"><p>Suv</p></div>
-                        <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%"><p>Automatic</p></div>
-                        <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%"><p>20,000</p></div>
-                       </div>
-
-                       <div class="rigth">
-                        <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%"><p>Diesel</p></div>
-                        <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%"><p>10kmpl</p></div>
-                        <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%"><p>7000/Day</p></div>
-                       </div>
-                    </div>
-                </div>
-            </div>
-
-                        <div class="car-section">
-                <h3>Toyota Fortuner 2025</h3>
-                <div class="car">
-                    <div class="img">
-                        <img src="https://tse3.mm.bing.net/th/id/OIP.QQ9PPBg_x10dfdOLwpSRBwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3" alt="carPhoto" width="50%">
-                    </div>
-                    <div class="detail">
-
-                       <div class="left">
-                        <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%"><p>Suv</p></div>
-                        <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%"><p>Automatic</p></div>
-                        <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%"><p>20,000</p></div>
-                       </div>
-
-                       <div class="rigth">
-                        <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%"><p>Diesel</p></div>
-                        <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%"><p>10kmpl</p></div>
-                        <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%"><p>7000/Day</p></div>
-                       </div>
-                    </div>
-                </div>
-            </div>
-
-                        <div class="car-section">
-                <h3>Toyota Fortuner 2025</h3>
-                <div class="car">
-                    <div class="img">
-                        <img src="https://tse3.mm.bing.net/th/id/OIP.QQ9PPBg_x10dfdOLwpSRBwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3" alt="carPhoto" width="50%">
-                    </div>
-                    <div class="detail">
-
-                       <div class="left">
-                        <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%"><p>Suv</p></div>
-                        <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%"><p>Automatic</p></div>
-                        <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%"><p>20,000</p></div>
-                       </div>
-
-                       <div class="rigth">
-                        <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%"><p>Diesel</p></div>
-                        <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%"><p>10kmpl</p></div>
-                        <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%"><p>7000/Day</p></div>
-                       </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </main>
 </body>
+
 </html>
