@@ -39,11 +39,14 @@
     <main>
         <div class="acar">
             <div class="car-section">
-                <h3>Toyota Fortuner 2025</h3>
+                <h3>{{car.brand}} {{car.name}} {{car.year}}</h3>
                 <div class="car">
                     <div class="img">
-                        <img src="https://tse3.mm.bing.net/th/id/OIP.QQ9PPBg_x10dfdOLwpSRBwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3"
-                            alt="carPhoto" width="50%">
+                        {% for img in car.images.all %}
+                        <img src="{{ img.img.url }}" alt="{{ car.name }}" style="width:50%; height:auto;">
+                        {% empty %}
+                        <p>No images available</p>
+                        {% endfor %}
                     </div>
 
                     <div class="detail">

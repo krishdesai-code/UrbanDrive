@@ -38,16 +38,18 @@
     <main>
         <h2>Available Cars</h2>
         <div class="acar">
-            {% for c in available_cars %}
+            {% for c in available %}
             <div class="car-section">
                 <h3>{{c.brand}} {{c.name}} {{c.year}}</h3>
                 <div class="car">
                     <div class="img">
-                        {% for img in car.images.all %}
-                        <img src="{{ img.image.url }}" alt="{{ car.name }}" style="width:50%; height:auto;">
-                        {% empty %}
-                        <p>No images available</p>
-                        {% endfor %}
+                        {% with first_image=c.images.first %}
+                            {% if first_image %}
+                                <img src="{{ first_image.img.url }}" alt="{{ c.name }}" style="width:50%; height:auto;">
+                            {% else %}
+                                <p>No images available</p>
+                            {% endif %}
+                        {% endwith %}
                     </div>
                     <div class="detail">
 
@@ -75,6 +77,7 @@
                             </div>
                         </div>
                     </div>
+                    <a href="{% url 'car_detail' c.id  %}">View More</a>
                 </div>
             </div>
             {% endfor %}

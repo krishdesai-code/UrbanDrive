@@ -39,6 +39,9 @@
     <main>
         <div class="availCar">
             <h2>Check available car</h2>
+            {% if error %}
+                <p style="color: red;">{{error}}</p>
+            {% endif %}
             <div class="form">
                 <form method="post">
                     {% csrf_token %}
@@ -55,8 +58,16 @@
                             <input type="date" name="sd">
                         </label>
 
+                         <label> Start Time :
+                            <input type="time" name="st">
+                        </label>
+
                         <label> End Date :
                             <input type="date" name="ed">
+                        </label>
+
+                        <label> End Time :
+                            <input type="time" name="et">
                         </label>
 
                     </div>

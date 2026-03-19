@@ -40,22 +40,34 @@ def login(request) :
 
 def home(request):
     if request.method == 'POST':
-        sd = request.POST.get('sd')  
-        ed = request.POST.get('ed')  
+        sd = request.POST.get('sd')
+        st = request.POST.get('st')
+        ed = request.POST.get('ed')
+        et = request.POST.get('et')
 
-        print("Start:", sd, "End:", ed)
-      
-        sd = datetime.strptime(sd, '%Y-%m-%d').date()
-        ed = datetime.strptime(ed, '%Y-%m-%d').date()
+        if not all([sd, st, ed, et]):
+            return render(request, "users/home.html", {"error": "Missing date/time"})
 
-        available_cars = Car.objects.exclude(
-            start_date__lte=ed,  
-            end_date__gte=sd     
+        try:
+            start_dt = datetime.strptime(sd + " " + st, "%Y-%m-%d %H:%M")
+            end_dt = datetime.strptime(ed + " " + et, "%Y-%m-%d %H:%M")
+        except ValueError:
+            return render(request, "users/home.html", {"error": "Invalid format"})
+
+        if end_dt <= start_dt:
+            return render(request, "users/home.html", {"error": "Invalid date/time range"})
+
+        available_cars = Car.objects.filter(
+               start_date__lte=start_dt.date(),
+                start_time__lte=start_dt.time(),
+                end_date__gte=end_dt.date(),
+                end_time__gte=end_dt.time(),
+                is_avail=True
         )
 
-        return render(request,'cars/cars.html',{'available' : available_cars})
+        return render(request, 'cars/cars.html', {'available': available_cars})
 
-    return render(request,"users/home.html")
+    return render(request, "users/home.html")
 
 def logout(request) :
     request.session.flush()
