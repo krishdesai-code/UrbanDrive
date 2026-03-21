@@ -36,35 +36,36 @@
 
         <main>
             <div class="form">
-                {% csrf_token %}
                 <h2>Fill the Details</h2>
                 <form method="post">
+                    {% csrf_token %}
                     <div class="upper">
                         <div class="aadhar">
                             <h3>Aadhar Details</h3>
-                            <input type="text" name="aadhar" placeholder="XXXX XXXX XXXX">
-                            <input type="date" name="dob" placeholder="Date of Birth">
+                            <input type="text" name="aadhar" placeholder="XXXX XXXX XXXX" required>
+                            <input type="date" name="dob" placeholder="Date of Birth" required>
                         </div>
                         <div class="licence">
                             <h3>Licence Details</h3>
-                            <input type="text" name="licence" placeholder="EX. GJ01 20230012345">
-                            <input type="date" name="valid" placeholder="Valid till">
+                            <input type="text" name="licence" placeholder="EX. GJ01 20230012345" required>
+                            <input type="date" name="valid" placeholder="Valid till" required>
                         </div>
                     </div>
                     <div class="lower">
 
                         <div class="mn">
                             <h3>Mobile Number</h3>
-                            <input type="text" name="mn" placeholder="9995584710">
+                            <input type="text" name="mn" placeholder="9995584710" required>
                         </div>
 
                         <div class="btn">
-                            <img src="{% static 'img/Back.png' %}" alt="backBtn" width="10%">
                             <input type="submit" value="Save">
                         </div>
                     </div>
                 </form>
             </div>
         </main>
+        <script src="{% static 'js/slider.js'  %}"></script>
+        <script src="{% static 'js/menu.js' %}"></script>
 </body>
 </html>

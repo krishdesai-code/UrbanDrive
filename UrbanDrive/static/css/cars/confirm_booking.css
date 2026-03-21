@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 
-.navbar{
+.navbar {
     height: 30%;
     width: auto;
     border-bottom: 3px solid black;
@@ -15,7 +15,7 @@
     justify-content: space-evenly;
 }
 
-.menu{
+.menu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@
 }
 
 
-.menu-options{
+.menu-options {
     display: none;
     position: absolute;
     top: 2rem;
@@ -36,32 +36,31 @@
     border-radius: 0.5rem;
 }
 
-.menu-options ul li{
+.menu-options ul li {
     list-style: none;
     padding: 0.8rem;
 }
-.menu-options ul li a{
+
+.menu-options ul li a {
     color: inherit;
     text-decoration: none;
 }
-.menu:hover .menu-options{
-    display: block;
-}
+
 
 /* main */
 
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-main h1{
+main h1 {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2rem;
     margin: 1rem;
 }
 
-.book{
+.book {
     height: auto;
     width: auto;
     display: flex;
@@ -70,12 +69,12 @@ main h1{
     flex-direction: column;
 }
 
-.book h1{
+.book h1 {
     margin: 0.5rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.left{
+.left {
     height: auto;
     width: auto;
     padding: 1rem;
@@ -84,41 +83,63 @@ main h1{
     border-radius: 0.5rem;
 }
 
-.left h3{
+.left h3 {
     margin: 1rem;
     text-align: center;
     font-size: 1.1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.left h2{
+.left h2 {
     font-size: 1.5rem;
     margin: 0.5rem;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.detail{
+.detail {
     display: flex;
     border: 1px solid grey;
     border-radius: 0.5rem;
 }
 
-.img{
+.img {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1rem;
 }
-.img img{
+
+.img img {
     width: 80%;
 }
 
-.leftside{
+.slider {
+    width: 100%;
+    border: 1px solid grey;
+}
+
+.slider-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    /* same as your img width */
+    padding: 2rem;
+}
+
+.slider-wrapper img {
+    width: 100%;
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+    object-fit: cover;
+    margin-left: 0.5rem;
+}
+
+.leftside {
     padding: 1rem;
 }
 
-.rigthside{
+.rigthside {
     padding: 1rem;
 }
 
@@ -130,27 +151,27 @@ main h1{
     margin: 0.5rem;
 }
 
-.cd p{
+.cd p {
     display: inline;
 }
 
-.cd img{
+.cd img {
     width: 15%;
 }
 
-.cardetails{
+.cardetails {
     border-top: 1px solid grey;
     border-radius: 0.5rem;
 }
 
-.termsandCon{
+.termsandCon {
     border: 1px solid grey;
     padding: 1rem;
     margin: 1rem;
     border-radius: 0.5rem;
 }
 
-.termsandCon h2{
+.termsandCon h2 {
     margin: 0.5rem;
     text-align: center;
 }
@@ -159,27 +180,28 @@ main h1{
     padding: 1rem;
 }
 
-.para ul li{
+.para ul li {
     margin: 0.3rem;
 }
 
-.rigth{
+.rigth {
     padding: 1rem;
     margin: 1rem;
 }
 
-.payment{
+.payment {
     padding: 1rem;
     border: 1px solid grey;
 }
 
-.carRent{
+.carRent {
     border: 1px solid grey;
 }
 
 .crd p {
     display: inline;
 }
+
 .crd {
     display: flex;
     align-items: center;
@@ -188,17 +210,18 @@ main h1{
     padding: 1rem;
 }
 
-.note{
+.note {
     padding: 1rem;
     border: 1px solid grey;
 }
-#n{
+
+#n {
     font-size: 1.2rem;
     font-weight: 600;
     color: red;
 }
 
-#p{
+#p {
     font-size: 1.2rem;
     text-align: center;
     font-weight: 700;
@@ -209,11 +232,11 @@ main h1{
     padding: 1rem;
 }
 
-.note p{
+.note p {
     margin: 0.5rem;
 }
 
-.btn{
+.btn {
     padding: 1rem;
     margin: 1rem;
     display: flex;
@@ -222,7 +245,7 @@ main h1{
     gap: 0.5rem;
 }
 
-.btn button{
+.btn button {
     width: 60%;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -232,24 +255,28 @@ main h1{
     font-size: 1rem;
 }
 
-.btn img{
+.btn img {
     width: 10%;
 }
 
-@media (min-width:1367px){
-    .navbar{
+@media (min-width:1367px) {
+    .navbar {
         height: 100px;
     }
-    .logo{
+
+    .logo {
         width: 50%;
     }
-    .logo img{
+
+    .logo img {
         width: 20%;
     }
-    .menu img{
+
+    .menu img {
         display: none;
     }
-    .menu-options{
+
+    .menu-options {
         position: relative;
         display: block;
         top: 0;
@@ -264,7 +291,7 @@ main h1{
         transition: transform 0.4s ease;
     }
 
-    .menu-options ul li a{
+    .menu-options ul li a {
         color: inherit;
         text-decoration: none;
     }
@@ -275,7 +302,7 @@ main h1{
         transform: rotateY(5deg) rotateX(5deg) translateZ(-20px);
     }
 
-    .menu-options:hover{
+    .menu-options:hover {
         background-color: #282222;
         color: #FAFAFA;
     }
@@ -286,95 +313,126 @@ main h1{
         justify-content: center;
     }
 
-    .menu-options ul li{
+    .menu-options ul li {
         margin-right: 1rem;
         padding: 0.3rem;
     }
 
-    .book{
+    .book {
         flex-direction: row;
         align-items: start;
         justify-content: center;
         gap: 0;
     }
-    .left{
+
+    .img{
+        height: 400px;
+        width: 400px;
+    }
+
+    .left {
         border: none;
     }
-    .cardetails{
+    
+    .cardetails {
+        height: 500px;
         width: 800px;
         border: 1px solid grey;
         padding: 0.5rem;
     }
-    .cardetails h3{
+
+    .cardetails h3 {
         text-align: center;
-        margin-bottom: 20px;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         margin: 1.4rem;
     }
-    .car{
+
+    .car {
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 20px;
     }
-    .leftside{
+
+    .leftside {
         padding: 0;
     }
-    .rigthside{
+
+    .rigthside {
         padding: 0;
     }
-    .detail{
+
+    .detail {
         height: 40%;
         width: 40%;
         padding: 1rem;
     }
-    .car img{
+
+    .car img {
         width: 300px;
     }
-    .cd img{
+
+    .cd img {
         width: 10%;
     }
-    .cardetails h2{
+
+    .cardetails h2 {
         text-align: left;
     }
-    .rigth{
+
+    .rigth {
         width: 500px;
         margin: 2rem;
     }
-    .rigth{
-       border: 1px solid grey;
-       border-radius: 0.5rem;
+
+    .rigth {
+        border: 1px solid grey;
+        border-radius: 0.5rem;
     }
-    .payment{
+
+    .payment {
         margin: 0;
         padding: 1rem;
         border: none;
     }
-    .carRent{
+
+    .carRent {
         border: none;
     }
-    .payment h2{
-        border-bottom:1px solid grey;
+
+    .payment h2 {
+        border-bottom: 1px solid grey;
         text-align: center;
         border-radius: 0.5rem;
     }
-    .note{
+
+    .note {
         border: 1px solid grey;
         border-radius: 0.5rem;
     }
-    .btn{
+
+    .btn {
         gap: 10px;
     }
-    .btn button{
+
+    .btn button {
         width: 20%;
         padding: 0.7rem;
     }
-    .btn img{
+
+    .btn img {
         width: 40px;
     }
 
-    .termsandCon{
+    .btn button a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .termsandCon {
         width: 800px;
         margin: 0;
         margin-top: 1rem;
     }
-    
+
 }

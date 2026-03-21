@@ -42,35 +42,37 @@
                 <h3>{{car.brand}} {{car.name}} {{car.year}}</h3>
                 <div class="car">
                     <div class="img">
-                        {% for img in car.images.all %}
-                        <img src="{{ img.img.url }}" alt="{{ car.name }}" style="width:50%; height:auto;">
-                        {% empty %}
-                        <p>No images available</p>
-                        {% endfor %}
+                        <div class="slider-wrapper">
+                            {% for img in car.images.all %}
+                            <img class="slider" src="{{ img.img.url }}" alt="{{ car.name }}">
+                            {% empty %}
+                            <p>No images available</p>
+                            {% endfor %}
+                        </div>
                     </div>
 
                     <div class="detail">
                         <div class="left">
                             <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%">
-                                <p>Suv</p>
+                                <p>{{car.category}}</p>
                             </div>
                             <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%">
-                                <p>Automatic</p>
+                                <p>{{car.get_gear_type_display}}</p>
                             </div>
                             <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%">
-                                <p>20,000</p>
+                                <p>{{car.Seat}} seater</p>
                             </div>
                         </div>
 
                         <div class="rigth">
                             <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%">
-                                <p>Diesel</p>
+                                <p>{{car.get_fuel_type_display}}</p>
                             </div>
                             <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%">
-                                <p>10kmpl</p>
+                                <p>{{car.average}}km/per liter</p>
                             </div>
                             <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%">
-                                <p>7000/Day</p>
+                                <p>{{car.rent}}/Day</p>
                             </div>
                         </div>
                     </div>
@@ -162,9 +164,11 @@
         </div>
 
         <div class="btn">
-            <button>Book Now</button>
+            <button><a href="{% url 'car_booking' car.id %}">Book Now</a></button>
         </div>
     </main>
-</body>
 
+    <script src="{% static 'js/slider.js'  %}"></script>
+    <script src="{% static 'js/menu.js' %}"></script>
+</body>
 </html>

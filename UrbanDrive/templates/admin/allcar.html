@@ -24,7 +24,7 @@
                     <ul>
                         <li><a href="{% url 'admin_home'  %}">Home</a></li>
                         <li><a href="{% url 'allcar'  %}">Cars</a></li>
-                        <li><a href="">Booked Cars</a></li>
+                        <li><a href="{% url 'booking'  %}">Booked Cars</a></li>
                         <li><a href="">Account</a></li>
                     </ul>
                 </div>
@@ -35,6 +35,7 @@
     </header>
     <main>
         <h2>Listed Cars</h2>
+        <a href="{% url 'add_car'  %}">Add New Car</a>
         <div class="acar">
             {% for c in cars %}
             <div class="car-section">
@@ -84,6 +85,7 @@
 
         </div>
     </main>
+    <script src="{% static 'js/menu.js' %}"></script>
 </body>
 
 </html>

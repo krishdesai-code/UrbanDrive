@@ -42,35 +42,40 @@
             <div class="left">
                 <div class="cardetails">
                     <h2>Car Details</h2>
-                    <h3>Toyota Fortuner 2025</h3>
+                    <h3>{{book.car.brand}} {{book.car.name}} {{book.car.year}}</h3>
                     <div class="car">
                         <div class="img">
-                            <img src="https://tse3.mm.bing.net/th/id/OIP.QQ9PPBg_x10dfdOLwpSRBwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3"
-                                alt="carPhoto" width="50%">
+                        <div class="slider-wrapper">
+                            {% for img in car.images.all %}
+                            <img class="slider" src="{{ img.img.url }}" alt="{{ car.name }}">
+                            {% empty %}
+                            <p>No images available</p>
+                            {% endfor %}
+                        </div>
                         </div>
                         <div class="detail">
 
                             <div class="leftside">
                                 <div class="cd"><img src="{% static 'img/car type.png' %}" alt="cartype" width="5%">
-                                    <p>Suv</p>
+                                    <p>{{book.car.category}}</p>
                                 </div>
                                 <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%">
-                                    <p>Automatic</p>
+                                    <p>{{book.car.get_gear_type_display}}</p>
                                 </div>
                                 <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%">
-                                    <p>20,000</p>
+                                    <p>{{book.car.Seat}} seater</p>
                                 </div>
                             </div>
 
                             <div class="rigthside">
                                 <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%">
-                                    <p>Diesel</p>
+                                    <p>{{book.car.get_fuel_type_display}}</p>
                                 </div>
                                 <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%">
-                                    <p>10kmpl</p>
+                                    <p>{{book.car.average}} km/per liter</p>
                                 </div>
                                 <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%">
-                                    <p>7000/Day</p>
+                                    <p>{{book.car.rent}}/Day</p>
                                 </div>
                             </div>
                         </div>
@@ -123,19 +128,19 @@
                 <div class="carRent">
                     <div class="crd">
                         <p>Car :</p>
-                        <p>Toyota Fortuner</p>
+                        <p>{{book.car.brand}} {{book.car.name}}</p>
                     </div>
                     <div class="crd">
                         <p>Rent :</p>
-                        <p>7000rs</p>
+                        <p>{{book.rent}} rs</p>
                     </div>
                     <div class="crd">
                         <p>Pickup :</p>
-                        <p>7 feb 04:00PM</p>
+                        <p>{{book.start}}</p>
                     </div>
                     <div class="crd">
                         <p>Drop-off :</p>
-                        <p>8 feb 04:00PM</p>
+                        <p>{{book.end}}</p>
                     </div>
                 </div>
                 <div class="note">
@@ -159,10 +164,10 @@
         </div>
 
         <div class="btn">
-            <img src="{% static 'img/Back.png' %}" width="5%">
-            <button>Book</button>
+            <a href="{% url 'home'  %}"><img src="{% static 'img/Back.png' %}" width="5%"></a>
+            <button><a href="{% url 'booked'  %}">Book</a></button>
         </div>
     </main>
+    <script src="{% static 'js/menu.js' %}"></script>
 </body>
-
 </html>

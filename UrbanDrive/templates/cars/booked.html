@@ -38,14 +38,19 @@
                 <div class="booked">
                     <img src="{% static 'img/success.png' %}" alt="success icon" width="50%">
                     <h2>Booking Confirmed You're all set to go!</h2>
+                    <h3>Congratulation {{username}}</h3>
+                    <h4>Booking Id : {{bi}}</h4>
                 </div>
 
                 <div class="urban">
                     <p>📍 Urban Drive : Where comfort meets control</p>
-                    <button><img src="{% static 'img/Home btn.png' %}" alt="homebtn" width="10%"></button>
+                    <button>
+                        <a href="{% url 'home'  %}"><img src="{% static 'img/Home btn.png' %}" alt="homebtn" width="10%"></a>
+                    </button>
                 </div>
             </div>
             
         </main>
+        <script src="{% static 'js/menu.js' %}"></script>
 </body>
 </html>

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/users/account.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="{% url 'home'  %}">Home</a></li>
+                        <li><a href="{% url 'home'  %}">About</a></li>
+                        <li><a href="{% url 'home'  %}">Contact</a></li>
+                        <li>
+                            <a href="{% url 'account'  %}">Account</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+
+    <main>
+        <div class="account">
+            <h1>Your Account</h1>
+            <div class="upper">
+                <img src="{% static 'img/account.png' %}" alt="accountlogo" width="30%">
+                <input type="text" value="Username : {{username}}" readonly>
+                <input type="text" value="Email Id : {{email}}" readonly>
+
+                <button><a href="{% url 'logout'  %}">Logout</a></button>
+            </div>
+
+
+            <div class="lower">
+                <h2>Booking Details</h2>
+                {% if booking %}
+                <div class="booking-card">
+                    <p>Booking ID: {{ booking.id }}</p>
+                    <p>Start: {{ booking.start }}</p>
+                    <p>End: {{ booking.end }}</p>
+                    <p>Car: {{ booking.car }}</p>
+                </div>
+                {% else %}
+                <p>No bookings yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <script src="{% static 'js/menu.js' %}"></script>
+</body>
+
+</html>

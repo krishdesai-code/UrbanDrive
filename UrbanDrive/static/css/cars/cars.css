@@ -44,9 +44,7 @@
     color: inherit;
     text-decoration: none;
 }
-.menu:hover .menu-options{
-    display: block;
-}
+
 
 /* main */
 
@@ -126,7 +124,7 @@ main h2{
         width: 50%;
     }
     .logo img{
-        width: 10%;
+        width: 20%;
     }
     .menu img{
         display: none;
@@ -190,16 +188,29 @@ main h2{
     .car{
         flex-direction: row;
     }
+    .img{
+        padding: 0;
+        margin: 0;
+    }
     .img img{
-        width: 200px
+        width: 200px;
+        padding: 0;
+        margin: 0;
     }
     .detail{
         height: 120px;
         background-color: #FAFAFA;
-        margin: 10px;
+    }
+    .left,
+    .rigth{
+        height: 100px;
+        width: 100px;
     }
     .cd{
-        margin: 5px;
+        background-color: #FAFAFA;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .cd p{
         margin: 5px;

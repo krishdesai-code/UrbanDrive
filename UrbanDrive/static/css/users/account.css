@@ -1,9 +1,9 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
+/* Mobile Design */
 
 .navbar{
     height: 30%;
@@ -45,20 +45,9 @@
     text-decoration: none;
 }
 
-
-/* main */
-
-body{
-    background-color: #FAFAFA;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.success{
-    height: 100%;
-    width: 100%;
-    background-color: #FAFAFA;
+.account{
     padding: 1rem;
-    margin: 2rem auto;
+    margin: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,36 +55,58 @@ body{
     gap: 2rem;
 }
 
-.success h2{
-   font-size: 2rem;
-}
-
-.booked{
+.upper{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2rem;
-    text-align: center;
-}
-
-.urban{
     padding: 1rem;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
 }
 
-.urban button{
-    width: 60%;
+.upper input{
+    padding: 0.7rem;
     border: none;
     border-radius: 0.5rem;
-    background-color: rgb(200, 197, 197);
 }
 
+.upper button{
+    margin-top: 1rem;
+    padding: 0.7rem;
+    border: none;
+    background-color: red;
+    color: #FAFAFA;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.lower{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+    border: 1px solid grey;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.booking-card{
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid grey;
+}
+
+
+/* main Section */
 
 @media (min-width:1367px){
     .navbar{
@@ -151,5 +162,4 @@ body{
         margin-right: 1rem;
         padding: 0.3rem;
     }
-
 }

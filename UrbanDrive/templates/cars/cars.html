@@ -22,9 +22,9 @@
 
                 <div class="menu-options">
                     <ul>
-                        <li><a href="/users/home">Home</a></li>
-                        <li><a href="/users/home">About</a></li>
-                        <li><a href="/users/home">Contact</a></li>
+                        <li><a href="{% url 'home'  %}">Home</a></li>
+                        <li><a href="{% url 'home'  %}">About</a></li>
+                        <li><a href="{% url 'home'  %}">Contact</a></li>
                         <li><a href="{% url 'login'  %}">Login|</a>
                             <a href="{% url 'register'  %}">Register</a>
                         </li>
@@ -58,22 +58,22 @@
                                 <p>{{c.category}}</p>
                             </div>
                             <div class="cd"><img src="{% static 'img/GearType.png' %}" alt="cartype" width="5%">
-                                <p>{{c.gear_type}}</p>
+                                <p>{{c.get_gear_type_display}}</p>
                             </div>
                             <div class="cd"><img src="{% static 'img/kilometer.png' %}" alt="cartype" width="5%">
-                                <p>{{c.Seat}}</p>
+                                <p>{{c.Seat}} Seater</p>
                             </div>
                         </div>
 
                         <div class="rigth">
                             <div class="cd"><img src="{% static 'img/Fuletype.png' %}" alt="cartype" width="5%">
-                                <p>{{c.fuel_type}}</p>
+                                <p>{{c.get_fuel_type_display}}</p>
                             </div>
                             <div class="cd"><img src="{% static 'img/average.png' %}" alt="cartype" width="5%">
-                                <p>{{c.average}}</p>
+                                <p>{{c.average}}/kmpl</p>
                             </div>
                             <div class="cd"><img src="{% static 'img/rent.png' %}" alt="cartype" width="5%">
-                                <p>{{c.rent}}</p>
+                                <p>{{c.rent}}/Day</p>
                             </div>
                         </div>
                     </div>
@@ -83,6 +83,7 @@
             {% endfor %}
         </div>
     </main>
+    <script src="{% static 'js/menu.js' %}"></script>
 </body>
 
 </html>

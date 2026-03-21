@@ -25,7 +25,7 @@
                     <ul>
                         <li><a href="{% url 'admin_home'  %}">Home</a></li>
                         <li><a href="{% url 'allcar'  %}">Cars</a></li>
-                        <li><a href="">Booked Cars</a></li>
+                        <li><a href="{% url 'booking'  %}">Booked Cars</a></li>
                         <li><a href="">Account</a></li>
                     </ul>
                 </div>
@@ -79,25 +79,13 @@
                         </select>
                     </label>
 
-                    <h3>Available Dates And Time</h3>
-                    <div class="avail">
-                        <div class="upper">
-                            <input type="date" name="sd" placeholder="start Date">
-                            <input type="time" name="st" placeholder="start Time">
-                        </div>
-
-                       <div class="lower">
-                            <input type="date" name="ed" placeholder="End Date">
-                            <input type="time" name="et" placeholder="End Time">
-                       </div>
-
-                    </div>
 
                     <input type="submit" value="Add">
                 </form>
             </div>
         </div>
     </main>
+    <script src="{% static 'js/menu.js' %}"></script>
 </body>
 
 </html>

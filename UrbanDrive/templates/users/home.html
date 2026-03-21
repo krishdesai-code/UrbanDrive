@@ -25,8 +25,14 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="{% url 'login'  %}">Login</a>
-                            <a href="{% url 'register'  %}">Register</a></li>
+                        <li>
+                            {% if request.session.id %}
+                            <a href="{% url 'account' %}">Account</a>
+                            {% else %}
+                            <a href="{% url 'login' %}">Login</a>
+                            <a href="{% url 'register' %}">Register</a>
+                            {% endif %}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -40,7 +46,7 @@
         <div class="availCar">
             <h2>Check available car</h2>
             {% if error %}
-                <p style="color: red;">{{error}}</p>
+            <p style="color: red;">{{error}}</p>
             {% endif %}
             <div class="form">
                 <form method="post">
@@ -58,7 +64,7 @@
                             <input type="date" name="sd">
                         </label>
 
-                         <label> Start Time :
+                        <label> Start Time :
                             <input type="time" name="st">
                         </label>
 
@@ -128,6 +134,7 @@
             </div>
         </div>
     </main>
+    <script src="{% static 'js/menu.js' %}"></script>
 </body>
 
 </html>

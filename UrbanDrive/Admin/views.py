@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Admin_login
-from Cars.models import CarCategory,Car,CarImages
+from Cars.models import CarCategory,Car,CarImages,Booking
+from Users.models import Users
 
 def admin_login(request):
     if request.method == "POST":
@@ -39,10 +40,6 @@ def add_car(request):
         seat = request.POST.get('seat')
         rent = request.POST.get('rent')
         avail = request.POST.get('avail')
-        sd = request.POST.get('sd')
-        st = request.POST.get('st')
-        ed = request.POST.get('ed')
-        et = request.POST.get('et')
 
         car = Car.objects.create(
             brand=brand,
@@ -55,10 +52,6 @@ def add_car(request):
             Seat=seat,
             rent=rent,
             is_avail=avail,
-            start_date=sd,
-            start_time=st,
-            end_date=ed,
-            end_time=et,
         )
 
         for image in images :
@@ -112,3 +105,11 @@ def Delete_car(request,id):
     car = Car.objects.get(id=id)
     car.delete()
     return redirect('allcar')
+
+def booking(request):
+    Booked = Booking.objects.all()
+    return render(request,'admin/Bookingdetail.html',{'booked' : Booked})
+
+def user_details(request):
+    user = Users.objects.all()
+    return render(request,'admin/userdetails.html',{'user' : user})

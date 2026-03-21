@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking information</title>
+    <link rel="stylesheet" href="{% static 'css/admin/Bookingdetail.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="{% url 'admin_home'  %}">Home</a></li>
+                        <li><a href="{% url 'allcar'  %}">Cars</a></li>
+                        <li><a href="{% url 'booking'  %}">Booked Cars</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <main>
+        <div class="main">
+            <table border="1">
+                <tr>
+                    <th>User ID</th>
+                    <th>UserName</th>
+                    <th>Email ID</th>
+                </tr>
+
+                {% for u in user %}
+                <tr>
+                  <td>{{u.id}}</td>
+                  <td>{{u.username}}</td>
+                  <td>{{u.email}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </main>
+
+    <script src="{% static 'js/slider.js' %}"></script>
+</body>
+</html>

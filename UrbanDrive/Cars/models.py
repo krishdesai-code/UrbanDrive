@@ -47,13 +47,6 @@ class Car(models.Model) :
 
     is_avail = models.BooleanField(default=True)
 
-    start_date = models.DateField(null=True,blank=True) 
-
-    start_time = models.TimeField(null=True,blank=True) 
-
-    end_date = models.DateField(null=True,blank=True) 
-
-    end_time = models.TimeField(null=True,blank=True)
 
     def __str__(self):
         return f"{self.brand} {self.name}"
@@ -85,15 +78,21 @@ class CarRating(models.Model) :
     comment = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.rating} - {self.car.name}"
+        return f"{self.rating} - {self.car_id}"
 
 
 class Booking(models.Model):
     id = models.CharField(unique=True,primary_key=True)
     user = models.ForeignKey(Users,on_delete=models.CASCADE)
     car = models.ForeignKey(Car,on_delete=models.CASCADE)
-    addhar = models.CharField(max_length=12,unique=True)
-    licence = models.CharField(max_length=20,unique=True)
+    aadhar = models.CharField(max_length=12)
+    aadhar_dob = models.DateField(null=True,blank=True)
+    licence = models.CharField(max_length=20)
+    licence_exp = models.DateField(null=True,blank=True)
+    mobile_no = models.CharField(max_length=10)
+    start = models.DateTimeField(null=True,blank=True)
+    end = models.DateTimeField(null=True,blank=True)
+    rent = models.DecimalField(max_digits=10,decimal_places=2)
 
     def __str__(self):
         return self.id

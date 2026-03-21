@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking information</title>
+    <link rel="stylesheet" href="{% static 'css/admin/Bookingdetail.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="{% url 'admin_home'  %}">Home</a></li>
+                        <li><a href="{% url 'allcar'  %}">Cars</a></li>
+                        <li><a href="{% url 'booking'  %}">Booked Cars</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <main>
+        <div class="main">
+            <table border="1">
+                <tr>
+                    <th>Booking ID</th>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>Car ID</th>
+                    <th>Car Name</th>
+                    <th>Mobile No</th>
+                    <th>Aadhar No</th>
+                    <th>Licence No</th>
+                    <th>Dob</th>
+                    <th>Licence Validity</th>
+                    <th>Rent</th>
+                    <th>From</th>
+                    <th>To</th>
+                </tr>
+
+                {% for b in booked %}
+                <tr>
+                    <td>{{b.id}}</td>
+                    <td>{{b.user.id}}</td>
+                    <td>{{b.user.username}}</td>
+                    <td>{{b.car.id}}</td>
+                    <td>{{b.car.name}}</td>
+                    <td>{{b.mobile_no}}</td>
+                    <td>{{b.aadhar}}</td>
+                    <td>{{b.licence}}</td>
+                    <td>{{b.aadhar_dob}}</td>
+                    <td>{{b.licence_exp}}</td>
+                    <td>{{b.rent}}</td>
+                    <td>{{b.start}}</td>
+                    <td>{{b.end}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </main>
+
+    <script src="{% static 'js/slider.js' %}"></script>
+</body>
+</html>

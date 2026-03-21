@@ -22,7 +22,7 @@
                     <ul>
                         <li><a href="{% url 'admin_home'  %}">Home</a></li>
                         <li><a href="{% url 'allcar'  %}">Cars</a></li>
-                        <li><a href="">Booked Cars</a></li>
+                        <li><a href="{% url 'booking'  %}">Booked Cars</a></li>
                         <li><a href="">Account</a></li>
                     </ul>
                 </div>
@@ -44,19 +44,19 @@
             <div class="booked">
                 <div class="upper">
                     <img src="{% static 'img/Booked car.png' %}" alt="bookedIcon" width="10%">
-                    <h2>Booked Cars</h2>
+                    <h2><a href="{% url 'booking'  %}">Booked Cars</a></h2>
                 </div>
                 <p>Admin can see booked car details.</p>
             </div>
             <div class="user">
                 <div class="upper">
                     <img src="{% static 'img/user.png' %}" alt="userIcon" width="10%">
-                    <h2>User Details</h2>
+                    <h2><a href="{% url 'userdetails'  %}">User Details</a></h2>
                 </div>
                 <p>Admin can see user information for future help.</p>
             </div>
         </div>
     </main>
-
+    <script src="{% static 'js/menu.js' %}"></script>
 </body>
 </html>
