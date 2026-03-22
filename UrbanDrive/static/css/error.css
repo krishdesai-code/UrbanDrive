@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile Design */
+
+.navbar{
+    height: 30%;
+    width: auto;
+    border-bottom: 3px solid black;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.menu-options{
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    background: #282222;
+    color: #FAFAFA;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+.menu-options ul li{
+    list-style: none;
+    padding: 0.8rem;
+}
+.menu-options ul li a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* main Section */
+
+body{
+    background:#FAFAFA;
+}
+
+.error{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
+    margin: 2rem;
+}
+
+.upper{
+    background-color: #fafafa;
+    padding: 1rem;
+    display: flex;
+    gap: 4px;
+}
+
+.upper img{
+    width: 30%;
+    border-bottom: 5px solid grey;
+}
+
+.word{
+    border-bottom: 5px solid grey;
+    font-size: 5rem;
+}
+
+.lower{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.lower h1{
+    color: red;
+    text-align: center;
+}
+.lower p{
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+@media (min-width:1367px){
+    .navbar{
+        height: 100px;
+        background-color: #FAFAFb;
+    }
+    .logo{
+        width: 50%;
+    }
+    .logo img{
+        width: 20%;
+    }
+    .menu img{
+        display: none;
+    }
+    .menu-options{
+        position: relative;
+        display: block;
+        top: 0;
+        right: 1rem;
+        background-color: #FAFAFA;
+        color: #282222;
+        border-bottom: 3px solid #282222;
+        border-top: 1px solid #282222;
+        border-left: 1px solid #fb5900;
+        border-right: 1px solid #fb5900;
+        padding: 0.3rem;
+        transition: transform 0.4s ease;
+    }
+
+    .menu-options ul li a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .menu-options:hover {
+        background-color: #282222;
+        color: #FAFAFA;
+        transform: rotateY(5deg) rotateX(5deg) translateZ(-20px);
+    }
+
+    .menu-options:hover{
+        background-color: #282222;
+        color: #FAFAFA;
+    }
+
+    .menu-options ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-options ul li{
+        margin-right: 1rem;
+        padding: 0.3rem;
+    }
+    .error{
+        cursor: pointer;
+    }
+    .upper{
+        width: 500px;
+    }
+    .upper img{
+        width: 10%;    
+    }
+    .word{
+        font-size: 4rem;
+        margin: 1px auto;
+    }
+}

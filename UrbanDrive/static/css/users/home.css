@@ -49,7 +49,7 @@
 /* main Section */
 
 body{
-    background-color: #FAFAFA;
+    background:#FAFAFA;
 }
 
 .availCar{
@@ -227,6 +227,7 @@ form{
 @media (min-width:1367px){
     .navbar{
         height: 100px;
+        background-color: #FAFAFb;
     }
     .logo{
         width: 50%;
@@ -289,6 +290,7 @@ form{
     }
     .ac{
         display: flex;
+        gap: 0;
     }
     .aboutus{
         width: 50%;

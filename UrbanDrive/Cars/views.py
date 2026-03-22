@@ -87,7 +87,8 @@ def review(request, id):
         rating = request.POST.get('rating')
         comment = request.POST.get('cmt')
 
-        user = request.user
+        user_id = request.session.get('id')
+        user = Users.objects.get(id=user_id)
         car = Car.objects.get(id=id)
 
         if not Booking.objects.filter(user=user, car=car).exists():

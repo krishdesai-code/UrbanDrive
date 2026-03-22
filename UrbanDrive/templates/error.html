@@ -1,15 +1,63 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
+    <link rel="stylesheet" href="{% static 'css/error.css' %}">
 </head>
+
 <body>
-    {% if error %}
-        <p style="color: red;">
-            {{error}}
-        </p>
-    {% endif %}
+
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="{% url 'home'  %}">Home</a></li>
+                        <li><a href="{% url 'home'  %}">About</a></li>
+                        <li><a href="{% url 'home'  %}">Contact</a></li>
+                        <li>
+                            <a href="{% url 'account'  %}">Account</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+
+
+    <main>
+        <div class="error">
+            <div class="upper">
+                <div class="word">E</div>
+                <div class="word">r</div>
+                <div class="word">r</div>
+                <img src="{% static 'img/AlloyWheel.png' %}" alt="alloyWheel" width="30%">
+                <div class="word">r</div>
+            </div>
+            <div class="lower">
+                <h1>Something went wrong!!</h1>
+                {% if error %}
+                <p>
+                    {{error}}
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

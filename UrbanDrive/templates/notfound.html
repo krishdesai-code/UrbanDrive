@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Found</title>
+    <link rel="stylesheet" href="{% static 'css/notfound.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="error">
+            <div class="upper">
+                <div class="word">4</div>
+                <img src="{% static 'img/AlloyWheel.png' %}" alt="alloyWheel" width="30%">
+                <div class="word">4</div>
+            </div>
+            <div class="lower">
+                <h1>404 - Page Not Found</h1>
+                <p>Oops! The page you are looking for does not exist.</p>
+                <a href="{% url 'home'  %}" >Home page</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
