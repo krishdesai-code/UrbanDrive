@@ -22,11 +22,16 @@
 
                 <div class="menu-options">
                     <ul>
-                        <li><a href="/users/home">Home</a></li>
-                        <li><a href="/users/home">About</a></li>
-                        <li><a href="/users/home">Contact</a></li>
-                        <li><a href="{% url 'login'  %}">Login|</a>
-                            <a href="{% url 'register'  %}">Register</a>
+                        <li><a href="{% url 'home'  %}">Home</a></li>
+                        <li><a href="{% url 'home'  %}">About</a></li>
+                        <li><a href="{% url 'home'  %}">Contact</a></li>
+                        <li>
+                            {% if request.session.id %}
+                            <a href="{% url 'account' %}">Account</a>
+                            {% else %}
+                            <a href="{% url 'login' %}">Login</a>
+                            <a href="{% url 'register' %}">Register</a>
+                            {% endif %}
                         </li>
                     </ul>
                 </div>
@@ -161,6 +166,24 @@
                     </li>
                 </ol>
             </div>
+        </div>
+
+        <div class="review">
+            <h2>Cars Rating & Reviews</h2>
+            <a href="{% url 'review' car.id  %}">Write Review</a>
+            {% for r in rating %}
+            <div class="review-card">
+                <div class="upper">
+                    <img src="{% static 'img/account.png' %}" alt="accoutImg" width="10%">
+                    <p id="un">{{r.user.username}}</p>
+                    <p>{{r.created_at}}</p>
+                </div>
+                <div class="lower">
+                    <p><strong>Rating : {{r.rating}}★</strong></p>
+                    <p>{{r.comment}}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
 
         <div class="btn">

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="{% static 'css/users/account.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo.png'  %}" type="image/x-icon">
 </head>
 
 <body>
@@ -52,12 +53,15 @@
             <div class="lower">
                 <h2>Booking Details</h2>
                 {% if booking %}
+                {% for b in booking %}
                 <div class="booking-card">
-                    <p>Booking ID: {{ booking.id }}</p>
-                    <p>Start: {{ booking.start }}</p>
-                    <p>End: {{ booking.end }}</p>
-                    <p>Car: {{ booking.car }}</p>
+                    <p>Booking ID: {{ b.id }}</p>
+                    <p>Start: {{ b.start }}</p>
+                    <p>End: {{ b.end }}</p>
+                    <p>Car: {{ b.car }}</p>
+                    <p>Rent: {{ b.rent }}</p>
                 </div>
+                {% endfor %}
                 {% else %}
                 <p>No bookings yet.</p>
                 {% endif %}

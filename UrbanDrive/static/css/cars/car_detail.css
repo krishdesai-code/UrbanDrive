@@ -25,6 +25,8 @@
 
 
 .menu-options{
+    display: none;
+    z-index: 9999;
     position: absolute;
     top: 2rem;
     right: 1rem;
@@ -72,15 +74,13 @@
 
 
 .img{
-    height: 200px;
-    width:  100%;
+    width:  80%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
     overflow: hidden;
     position: relative;
+    border-radius: 1rem;
 }
 
 .slider{
@@ -91,8 +91,7 @@
 .slider-wrapper {
     display: flex;
     overflow: hidden;
-    width: 100%; /* same as your img width */
-    padding: 2rem;
+    width: 100%; 
 }
 
 .slider-wrapper img {
@@ -100,7 +99,6 @@
     flex-shrink: 0;
     transition: transform 0.5s ease;
     object-fit: cover;
-    margin-left: 0.5rem;
 }
 
 .detail{
@@ -153,7 +151,39 @@
     padding: 1rem;
 }
 
+.review{
+    padding: 1rem;
+    border: 1px solid grey;
+    margin: 1rem;
+    border-radius: 0.5rem;
+}
+.review h2{
+    text-align: center;
+}
+.review-card{
+    padding: 1rem;
+    border: 0.5px solid gray;
+    margin: 1rem;
+    border-radius:0.5rem;
+}
+#un{
+    display: inline;
+}
+.upper{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.upper p{
+    margin: 0.5rem;
+}
 
+.lower{
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
 
 .btn{
     display: flex;
@@ -283,6 +313,13 @@
         text-align: center;
         font-size: 2rem;
         margin: 2rem auto;
+    }
+    .review{
+        width: 80%;
+        margin: 2rem auto;
+    }
+    .upper img{
+        width: 3%;
     }
     .termsCondition{
         width: 80%;

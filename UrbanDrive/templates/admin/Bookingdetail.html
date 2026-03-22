@@ -23,7 +23,7 @@
                         <li><a href="{% url 'admin_home'  %}">Home</a></li>
                         <li><a href="{% url 'allcar'  %}">Cars</a></li>
                         <li><a href="{% url 'booking'  %}">Booked Cars</a></li>
-                        <li><a href="">Account</a></li>
+                        <li><a href="{% url 'add_car'  %}">Add New Car</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,6 +49,7 @@
                     <th>Rent</th>
                     <th>From</th>
                     <th>To</th>
+                    <th>Operations</th>
                 </tr>
 
                 {% for b in booked %}
@@ -66,6 +67,9 @@
                     <td>{{b.rent}}</td>
                     <td>{{b.start}}</td>
                     <td>{{b.end}}</td>
+                    <td>
+                        <a onclick="confirm('Are you sure you want to delete this booking?')" style="color: red;" href="{% url 'deleteBooking' b.id  %}">Delete</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>

@@ -162,4 +162,8 @@ a{
         margin-right: 1rem;
         padding: 0.3rem;
     }
+
+    .lower{
+        min-width: 450px;
+    }
 }

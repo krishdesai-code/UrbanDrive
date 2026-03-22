@@ -22,6 +22,10 @@ def admin_login(request):
         return render(request,"admin/login.html",{'error' : error})
     return render(request,"admin/login.html")
 
+def admin_logout(request):
+    request.session.flush()
+    return redirect('adminlogin')
+
 def admin_home(request):
     return render(request,'admin/home.html')
 
@@ -109,6 +113,11 @@ def Delete_car(request,id):
 def booking(request):
     Booked = Booking.objects.all()
     return render(request,'admin/Bookingdetail.html',{'booked' : Booked})
+
+def DeleteBooking(request,id):
+    booking = Booking.objects.get(id=id)
+    booking.delete()
+    return redirect('booking')
 
 def user_details(request):
     user = Users.objects.all()

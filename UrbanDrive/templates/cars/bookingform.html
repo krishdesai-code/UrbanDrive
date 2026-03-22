@@ -20,12 +20,10 @@
 
                 <div class="menu-options">
                     <ul>
-                        <li><a href="/users/home">Home</a></li>
-                        <li><a href="/users/home">About</a></li>
-                        <li><a href="/users/home">Contact</a></li>
-                        <li><a href="{% url 'login'  %}">Login|</a>
-                            <a href="{% url 'register'  %}">Register</a>
-                        </li>
+                        <li><a href="{% url 'home'  %}">Home</a></li>
+                        <li><a href="{% url 'home'  %}">About</a></li>
+                        <li><a href="{% url 'home'  %}">Contact</a></li>
+                        <li><a href="{% url 'account'  %}">Account</a></li>
                     </ul>
                 </div>
             </div>

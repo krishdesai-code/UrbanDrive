@@ -68,7 +68,7 @@ def home(request):
             end__gte=start_dt
             )
         booked_car_ids = conflicting_bookings.values_list('car_id', flat=True)
-        available_cars = Car.objects.exclude(id__in=booked_car_ids)
+        available_cars = Car.objects.exclude(id__in=booked_car_ids).order_by('-is_avail')
         request.session['start'] = start_dt.isoformat()
         request.session['end'] = end_dt.isoformat()
         return render(request, 'cars/cars.html', {'available': available_cars})
@@ -79,7 +79,7 @@ def account(request):
     username = request.session.get('username')
     email = request.session.get('email')
 
-    bookingDetails = Booking.objects.filter(user=id).order_by('-start').first()
+    bookingDetails = Booking.objects.filter(user=id).order_by('-id')
     return render(request,'users/account.html',{'username' : username , 'email' : email , 'booking' : bookingDetails})
 
 def logout(request) :

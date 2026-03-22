@@ -7,4 +7,5 @@ urlpatterns = [
     path("bookingForm/<int:id>/",views.booking_form,name="car_booking"),
     path("confirmBooking/<str:booking_id>/",views.confirm_booking,name="confirm_booking"),
     path("carbooked/",views.car_booked,name="booked"),
+    path("addreview/<int:id>",views.review,name="review"),
 ]

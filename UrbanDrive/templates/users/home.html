@@ -52,7 +52,7 @@
                 <form method="post">
                     {% csrf_token %}
 
-                    <select name="loc" id="loc">
+                    <select name="loc" id="loc" required>
                         <option>Select Location</option>
                         <option value="Ahmedabad">Ahmedabad</option>
                     </select>
@@ -60,20 +60,20 @@
                     <div class="dt">
                         <p>Select Date and Time</p>
 
-                        <label> Start Date :
-                            <input type="date" name="sd">
+                        <label for="sd">Start Date :
+                            <input type="date" id="sd" name="sd">
                         </label>
 
-                        <label> Start Time :
-                            <input type="time" name="st">
+                        <label for="st">Start Time :
+                            <input type="time" id="st" name="st">
                         </label>
 
-                        <label> End Date :
-                            <input type="date" name="ed">
+                        <label for="ed">End Date :
+                            <input type="date" id="ed" name="ed">
                         </label>
 
-                        <label> End Time :
-                            <input type="time" name="et">
+                        <label for="et">End Time :
+                            <input type="time" id="et" name="et">
                         </label>
 
                     </div>

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <link rel="stylesheet" href="{% static 'css/cars/add_review.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo" width="25%">
+            </div>
+
+            <div class="menu">
+                <img src="{% static 'img/menu.png' %}" alt="menu" width="25%">
+
+                <div class="menu-options">
+                    <ul>
+                        <li><a href="{% url 'home'  %}">Home</a></li>
+                        <li><a href="{% url 'home'  %}">About</a></li>
+                        <li><a href="{% url 'home'  %}">Contact</a></li>
+                        <li>
+                            {% if request.session.id %}
+                            <a href="{% url 'account' %}">Account</a>
+                            {% else %}
+                            <a href="{% url 'login' %}">Login</a>
+                            <a href="{% url 'register' %}">Register</a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <main>
+        <div class="review">
+            <h2>Post your Review</h2>
+            <a href="{% url 'home'  %}">Go back</a>
+            <div class="form">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="star-rating">
+                        <input type="radio" name="rating" value="5" id="5"><label for="5">★</label>
+                        <input type="radio" name="rating" value="4" id="4"><label for="4">★</label>
+                        <input type="radio" name="rating" value="3" id="3"><label for="3">★</label>
+                        <input type="radio" name="rating" value="2" id="2"><label for="2">★</label>
+                        <input type="radio" name="rating" value="1" id="1"><label for="1">★</label>
+                    </div>
+                    <textarea name="cmt" placeholder="Comment" rows="8" cols="35"></textarea>
+                    <input type="submit" value="Post">
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="{% static 'js/slider.js' %}"></script>
+</body>
+</html>

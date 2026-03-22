@@ -70,12 +70,13 @@ class CarRating(models.Model) :
     ]
 
     id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(Users,on_delete=models.CASCADE)
-    car_id = models.ForeignKey(Car,on_delete=models.CASCADE)
+    user= models.ForeignKey(Users,on_delete=models.CASCADE)
+    car= models.ForeignKey(Car,on_delete=models.CASCADE)
 
     rating = models.IntegerField(choices=RATING_CHOICES)
 
     comment = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True,null=True)
 
     def __str__(self):
         return f"{self.rating} - {self.car_id}"

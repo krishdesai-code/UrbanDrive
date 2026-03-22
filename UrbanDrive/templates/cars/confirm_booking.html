@@ -22,12 +22,10 @@
 
                 <div class="menu-options">
                     <ul>
-                        <li><a href="/users/home">Home</a></li>
-                        <li><a href="/users/home">About</a></li>
-                        <li><a href="/users/home">Contact</a></li>
-                        <li><a href="{% url 'login'  %}">Login|</a>
-                            <a href="{% url 'register'  %}">Register</a>
-                        </li>
+                        <li><a href="{% url 'home'  %}">Home</a></li>
+                        <li><a href="{% url 'home'  %}">About</a></li>
+                        <li><a href="{% url 'home'  %}">Contact</a></li>
+                        <li><a href="{% url 'account'  %}">Account</a></li>
                     </ul>
                 </div>
             </div>
@@ -81,7 +79,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="termsandCon">
                 <h2>Terms and Conditions</h2>
 
@@ -132,7 +129,7 @@
                     </div>
                     <div class="crd">
                         <p>Rent :</p>
-                        <p>{{book.rent}} rs</p>
+                        <p><strong>{{book.rent}} rs</strong></p>
                     </div>
                     <div class="crd">
                         <p>Pickup :</p>
@@ -169,5 +166,6 @@
         </div>
     </main>
     <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/slider.js' %}"></script>
 </body>
 </html>
