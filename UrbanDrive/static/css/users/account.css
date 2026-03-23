@@ -166,4 +166,7 @@ a{
     .lower{
         min-width: 450px;
     }
+    .lower input{
+        width: 200px;
+    }
 }

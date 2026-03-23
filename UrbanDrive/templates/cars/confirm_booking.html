@@ -162,7 +162,7 @@
 
         <div class="btn">
             <a href="{% url 'home'  %}"><img src="{% static 'img/Back.png' %}" width="5%"></a>
-            <button><a href="{% url 'booked'  %}">Book</a></button>
+            <button><a href="{% url 'booked'  %}">Pay {{book.rent}}</a></button>
         </div>
     </main>
     <script src="{% static 'js/menu.js' %}"></script>

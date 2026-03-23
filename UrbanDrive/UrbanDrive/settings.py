@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-fallback-key-for-local')
 
 # DEBUG should always be False in production
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS from Render environment variable
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
